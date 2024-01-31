@@ -35,7 +35,7 @@ describe("Unit test create Product use case", () => {
     input.name = "";
 
     await expect(ProductCreateUseCase.execute(input)).rejects.toThrow(
-      "Name is required"
+      "Name is required",
     );
   });
 
@@ -43,10 +43,10 @@ describe("Unit test create Product use case", () => {
     const ProductRepository = MockRepository();
     const ProductCreateUseCase = new CreateProductUseCase(ProductRepository);
 
-    input.type = "c"
+    input.type = "c";
 
     await expect(ProductCreateUseCase.execute(input)).rejects.toThrow(
-      "Product type not supported"
+      "Product type not supported",
     );
   });
 
@@ -54,12 +54,12 @@ describe("Unit test create Product use case", () => {
     const ProductRepository = MockRepository();
     const ProductCreateUseCase = new CreateProductUseCase(ProductRepository);
 
-    input.price = -10
-    input.type = "a"
-    input.name = "Product"
+    input.price = -10;
+    input.type = "a";
+    input.name = "Product";
 
     await expect(ProductCreateUseCase.execute(input)).rejects.toThrow(
-      "Price must be greater than zero"
+      "Price must be greater than zero",
     );
   });
 });

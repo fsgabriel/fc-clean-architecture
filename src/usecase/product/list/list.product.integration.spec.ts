@@ -30,22 +30,25 @@ describe("Test list product use case", () => {
     const product1 = new Product("123", "Product1", 10);
     const product2 = new Product("456", "Product2", 20);
 
-    await productRepository.create(product1)
-    await productRepository.create(product2)
-    const products = {products: [
-    {
-      id: product1.id,
-      name: product1.name,
-      price: product1.price
-    },
-    {
-      id: product2.id,
-      name: product2.name,
-      price: product2.price
-    }]}
+    await productRepository.create(product1);
+    await productRepository.create(product2);
+    const products = {
+      products: [
+        {
+          id: product1.id,
+          name: product1.name,
+          price: product1.price,
+        },
+        {
+          id: product2.id,
+          name: product2.name,
+          price: product2.price,
+        },
+      ],
+    };
 
     const result = await usecase.execute({});
 
-    expect(result).toEqual(products)
+    expect(result).toEqual(products);
   });
 });

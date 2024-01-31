@@ -5,7 +5,6 @@ const product1 = ProductFactory.create("a", "Product1", 10);
 
 const product2 = ProductFactory.create("a", "Product2", 20);
 
-
 const MockRepository = () => {
   return {
     create: jest.fn(),

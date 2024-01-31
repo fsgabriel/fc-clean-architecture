@@ -21,11 +21,10 @@ export default class OrderFactory {
         item.name,
         item.price,
         item.productId,
-        item.quantity
+        item.quantity,
       );
     });
-    
-    return new Order(props.id, props.customerId, items);
 
+    return new Order(props.id, props.customerId, items);
   }
 }

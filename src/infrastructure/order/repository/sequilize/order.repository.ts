@@ -19,7 +19,7 @@ export default class OrderRepository {
       },
       {
         include: [{ model: OrderItemModel }],
-      }
+      },
     );
   }
 }

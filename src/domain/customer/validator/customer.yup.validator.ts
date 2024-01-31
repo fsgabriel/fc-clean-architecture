@@ -20,7 +20,7 @@ export default class CustomerYupValidator
           },
           {
             abortEarly: false,
-          }
+          },
         );
     } catch (errors) {
       const e = errors as yup.ValidationError;

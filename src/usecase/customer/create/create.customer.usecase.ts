@@ -15,7 +15,7 @@ export default class CreateCustomerUseCase {
   }
 
   async execute(
-    input: InputCreateCustomerDto
+    input: InputCreateCustomerDto,
   ): Promise<OutputCreateCustomerDto> {
     const customer = CustomerFactory.createWithAddress(
       input.name,
@@ -23,8 +23,8 @@ export default class CreateCustomerUseCase {
         input.address.street,
         input.address.number,
         input.address.zip,
-        input.address.city
-      )
+        input.address.city,
+      ),
     );
 
     await this.customerRepository.create(customer);

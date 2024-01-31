@@ -32,7 +32,7 @@ describe("Test update product use case", () => {
     const product = await createUsecase.execute({
       name: "Product",
       price: 10,
-      type: "a"
+      type: "a",
     });
 
     const input = {
@@ -46,7 +46,7 @@ describe("Test update product use case", () => {
     expect(result).toEqual({
       id: product.id,
       name: "Product Update",
-      price: 300
+      price: 300,
     });
   });
 });

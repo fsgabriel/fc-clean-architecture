@@ -44,7 +44,7 @@ describe("Unit test create customer use case", () => {
     input.name = "";
 
     await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
-      "Name is required"
+      "Name is required",
     );
   });
 
@@ -55,7 +55,7 @@ describe("Unit test create customer use case", () => {
     input.address.street = "";
 
     await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
-      "Street is required"
+      "Street is required",
     );
   });
 });

@@ -16,11 +16,11 @@ export default class ProductPresenter {
           product: data.products.map((product) => ({
             id: product.id,
             name: product.name,
-            price: product.price
-            })),
+            price: product.price,
+          })),
         },
       },
-      xmlOption
+      xmlOption,
     );
   }
 }

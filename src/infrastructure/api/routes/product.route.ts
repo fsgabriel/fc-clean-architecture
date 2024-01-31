@@ -4,30 +4,30 @@ import ProductRepository from "../../product/repository/sequelize/product.reposi
 import ListProductUseCase from "../../../usecase/product/list/list.product.usecase";
 import ProductPresenter from "../presenters/product.presenter";
 
-export const productRoute = express.Router()
+export const productRoute = express.Router();
 
 productRoute.post("/", async (req: Request, res: Response) => {
-  const usecase = new CreateProductUseCase(new ProductRepository())
+  const usecase = new CreateProductUseCase(new ProductRepository());
   try {
     const productDto = {
       name: req.body.name,
       price: req.body.price,
-      type: req.body.type
-    }
+      type: req.body.type,
+    };
 
-    const output = await usecase.execute(productDto)
-    res.send(output)
+    const output = await usecase.execute(productDto);
+    res.send(output);
   } catch (err) {
-    res.status(500).send(err)
+    res.status(500).send(err);
   }
-})
+});
 
-productRoute.get("/",async (req: Request, res: Response) => {
-  const usecase = new ListProductUseCase(new ProductRepository())
-  const output = await usecase.execute({})
+productRoute.get("/", async (req: Request, res: Response) => {
+  const usecase = new ListProductUseCase(new ProductRepository());
+  const output = await usecase.execute({});
 
   res.format({
     json: async () => res.send(output),
-    xml :async () => res.send(ProductPresenter.listXML(output))
-  })
-})
+    xml: async () => res.send(ProductPresenter.listXML(output)),
+  });
+});

@@ -3,7 +3,7 @@ import Address from "../../../domain/customer/value-object/address";
 import UpdateCustomerUseCase from "./update.customer.usecase";
 const customer = CustomerFactory.createWithAddress(
   "John",
-  new Address("Street", 123, "Zip", "City")
+  new Address("Street", 123, "Zip", "City"),
 );
 
 const input = {

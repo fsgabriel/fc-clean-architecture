@@ -10,7 +10,7 @@ export default class OrderItem {
     name: string,
     price: number,
     productId: string,
-    quantity: number
+    quantity: number,
   ) {
     this._id = id;
     this._name = name;

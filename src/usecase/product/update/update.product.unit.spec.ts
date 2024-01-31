@@ -1,12 +1,12 @@
 import ProductFactory from "../../../domain/product/factory/product.factory";
 import UpdateProductUseCase from "./update.product.usecase";
 
-const product = ProductFactory.create("a", "Product", 10)
+const product = ProductFactory.create("a", "Product", 10);
 
 const input = {
   id: product.id,
   name: "Product",
-  price: 10
+  price: 10,
 };
 
 const MockRepository = () => {
